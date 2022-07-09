@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+        background-color: burlywood;
+        }
+        .div2 {
+        background-color: palevioletred;
+        }
+        .div3 {
+        background-color: yellowgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Создать на странице контейнер с 3 DIV внутри. 
+    Программа должна задать им случайные размеры в диапазоне от 1px до 300px. 
+    Затем через 3 секунды после отображения страницы изменить у первого ширину на высоту, 
+    а высоту на ширину, через 4 сек у второго, через 5 сек у третьего. 
+    Запоминать размеры при их начальном задании запрещается, 
+    изменения производим, предварительно прочитав существующие размеры.-->
+    
+    <container>
+        <div class ="block div1"></div>
+        <div class="block div2"></div>
+        <div class="block div3"></div>
+    </container>
+
+<script>
+
+    //случайные размеры блока div1
+
+    let getRandomSizeWidth1 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let getRandomSizeHeight1 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let box1 = document.querySelector('.div1');
+    box1.style.width = getRandomSizeWidth1;
+    box1.style.height = getRandomSizeHeight1;
+    console.log('Ширина первого блока div1 равна: '+ (getComputedStyle(box1).width));
+    console.log('Высота первого блока div1 равна: '+(getComputedStyle(box1).height));
+
+    //через 3 секунды меняю ширину на высоту, а высоту на ширину
+
+    setTimeout(function() {    
+    let width = box1.scrollWidth, height = box1.scrollHeight;
+    box1.style.width = height+'px';
+    box1.style.height = width+'px';
+    console.log('Ширина первого блока div1 равна: '+ (getComputedStyle(box1).width));
+    console.log('Высота первого блока div1 равна: '+(getComputedStyle(box1).height));
+    }, 3000); 
+    
+
+    //случайные размеры блока div2
+
+    let getRandomSizeWidth2 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let getRandomSizeHeight2 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let box2 = document.querySelector('.div2');
+    box2.style.width = getRandomSizeWidth2;
+    box2.style.height = getRandomSizeHeight2;
+    console.log('Ширина второго блока div2 равна: '+ (getComputedStyle(box2).width));
+    console.log('Высота второго блока div2 равна: '+(getComputedStyle(box2).height));
+
+    //через 4 секунды меняю ширину на высоту, а высоту на ширину
+
+    setTimeout(function() {    
+    let width = box2.scrollWidth, height = box2.scrollHeight;
+    box2.style.width = height+'px';
+    box2.style.height = width+'px';
+    console.log('Ширина второго блока div2 равна: '+ (getComputedStyle(box2).width));
+    console.log('Высота второго блока div2 равна: '+(getComputedStyle(box2).height));
+    }, 4000); 
+
+
+    //случайные размеры блока div2
+
+    let getRandomSizeWidth3 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let getRandomSizeHeight3 = (Math.trunc(Math.random() * 300) + 1) + 'px';
+    let box3 = document.querySelector('.div3');
+    box3.style.width = getRandomSizeWidth3;
+    box3.style.height = getRandomSizeHeight3;
+    console.log('Ширина третьего блока div3 равна: '+ (getComputedStyle(box3).width));
+    console.log('Высота третьего блока div3 равна: '+ (getComputedStyle(box3).height));
+
+    //через 5 секунд меняю ширину на высоту, а высоту на ширину
+
+    setTimeout(function() {    
+    let width = box3.scrollWidth, height = box3.scrollHeight;
+    box3.style.width = height+'px';
+    box3.style.height = width+'px';
+    console.log('Ширина третьего блока div3 равна: '+ (getComputedStyle(box3).width));
+    console.log('Высота третьего блока div3 равна: '+ (getComputedStyle(box3).height));
+    }, 5000); 
+
+</script>
+    
+</body>
+</html>
